@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "791669722094",
+    "project_id": "freelancediteur-6ff38",
+    "storage_bucket": "freelancediteur-6ff38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791669722094:android:400e4133418e6e72e69cff",
+        "android_client_info": {
+          "package_name": "com.dicompro.freelancediteur"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791669722094-c3j6gtgrdfle0dj6nke7jbi2ji79q1f1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dicompro.freelancediteur",
+            "certificate_hash": "0b876be54834a5285ecb62ce7fd77d68dd069dc3"
+          }
+        },
+        {
+          "client_id": "791669722094-q893sm1lp1ao1mjdfnve0g9t5ld6ma0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4k0yxy0d-VrzllYQlTTEtklpAEhg215Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791669722094-q893sm1lp1ao1mjdfnve0g9t5ld6ma0b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "791669722094-jsmugdp58c1nl19vqeh1oa324k1ijba1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dicompro.freelancediteur"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8619812228038696~7597999398"
+    }
+  ],
+  "configuration_version": "1"
+}
