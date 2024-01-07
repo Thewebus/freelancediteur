@@ -218,7 +218,8 @@ class ViewEPubFileNewState extends State<ViewEPubFileNew> {
       downloadFile();
     } else {
       if (Platform.isAndroid) {
-        Navigator.of(context).pop();
+        //Navigator.of(context).pop();
+        downloadFile();
       } else {
         downloadFile();
       }

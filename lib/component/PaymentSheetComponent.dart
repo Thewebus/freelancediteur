@@ -424,8 +424,9 @@ class PaymentSheetComponentState extends State<PaymentSheetComponent>
                     },
                     text: keyString(context, 'lbl_pay')! +
                         ' ' +
-                        getStringAsync(CURRENCY_SYMBOL) +
-                        widget.total.toString(),
+                        widget.total.toString() +
+                        ' ' +
+                        getStringAsync(CURRENCY_SYMBOL),
                     textStyle: boldTextStyle(color: white),
                     color: PRIMARY_COLOR,
                   ).center(),

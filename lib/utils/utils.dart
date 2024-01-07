@@ -22,7 +22,7 @@ Future clearSearchHistory() async {
   await setValue(SEARCH_TEXT, "");
 }
 
-Future<bool> checkPermission(widget) async {
+Future<bool> checkPermissionOLD(widget) async {
   var status = await Permission.storage.status;
 
   if (!status.isGranted) {
@@ -40,7 +40,30 @@ Future<bool> checkPermission(widget) async {
   }
 }
 
-Future<bool> checkPermissionOLD(widget) async {
+Future<bool> checkPermissionGOUDE3(widget) async {
+  PermissionStatus status = await Permission.storage.status;
+
+  if (status.isGranted) {
+    // La permission a déjà été accordée
+    return true;
+  } else if (status.isDenied) {
+    // La permission a été refusée précédemment, une nouvelle demande est nécessaire
+    log("PERMISSION REFUSÉE >>>>>>>>>>>>>>>>>>>> DEMANDE EN COURS : $status");
+    PermissionStatus permission = await Permission.storage.request();
+    return permission == PermissionStatus.granted;
+  } else if (status.isPermanentlyDenied) {
+    // L'utilisateur a refusé la permission de manière permanente, rediriger vers les paramètres du téléphone
+    log("PERMISSION PERMANENTEMENT REFUSÉE >>>>>>>>>>>>>>>>>>>> REDIRECTION VERS LES PARAMÈTRES");
+    openAppSettings(); // Ouvre les paramètres de l'application
+    return false;
+  } else {
+    // Il est possible que la permission soit restreinte (uniquement sur Android)
+    log("PERMISSION RESTRICTED >>>>>>>>>>>>>>>>>>>> INFO UNIQUEMENT : $status");
+    return false;
+  }
+}
+
+Future<bool> checkPermission(widget) async {
   if (Platform.isAndroid) {
     PermissionStatus permission = await Permission.storage.request();
 

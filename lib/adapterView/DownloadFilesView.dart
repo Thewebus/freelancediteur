@@ -155,7 +155,8 @@ class _DownloadFilesViewState extends State<DownloadFilesView> {
 
           log("Verifications >>>> bookName: ${widget.bookName} ");
           log("Verifications >>>> bookImage: ${widget.bookImage} ");
-          //log("Verifications >>>> downloads: ${widget.downloads} ");
+          log("Verifications >>>> downloads: ${widget.downloads} ");
+          log("Verifications >>>> _isFileExist .......>>  $_isFileExist ");
 
           Navigator.push(
             context,
