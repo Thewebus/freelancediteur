@@ -161,58 +161,6 @@ class ViewEPubFileNewState extends State<ViewEPubFileNew> {
     }
   }
 
-  Future<void> downloadFileGOUDEBKUP1() async {
-    await InternetFile.get(
-      widget.downloads.file.validate(),
-      storage: storageIO,
-      storageAdditional: storageIO.additional(
-        filename: await getBookFileName(
-            widget.mBookId, widget.downloads.file.validate()),
-        location: await localPath,
-      ),
-      force: true,
-      progress: (receivedLength, contentLength) async {
-        final percentage =
-            (receivedLength / contentLength * 100).round().toString();
-        percentageCompleted = percentage + "% Completed";
-        print(
-            'download progress: $receivedLength of $contentLength ($percentage%)');
-
-        setState(() {});
-      },
-    ).catchError((e) {
-      log('error: ${e.toString()}');
-      isDownloadFailFile = true;
-      setState(() {});
-    });
-
-    if (!isDownloadFailFile) {
-      String filePath = await getBookFilePath(
-          widget.mBookId, widget.downloads.file.validate());
-
-      ///encryption file
-      await encryptFile(filePath).then((value) async {
-        await insertIntoDb(value);
-        LiveStream().emit(REFRESH_LIBRARY_DATA);
-      });
-      appStore.setLoading(true);
-
-      await _openDownloadedFile(filePath).then((value) async {
-        if (filePath.contains('.epub')) {
-          await 2.seconds.delay;
-          await encryptFile(fullFilePath);
-          await dbHelper.delete(fullFilePath);
-          await File(fullFilePath).delete();
-        }
-        appStore.setLoading(false);
-      });
-
-      setState(() {
-        isDownloadFile = true;
-      });
-    }
-  }
-
   Future<void> requestPermission() async {
     if (await checkPermission(widget)) {
       downloadFile();

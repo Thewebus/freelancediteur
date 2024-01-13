@@ -352,15 +352,15 @@ Widget titleSilverAppBarWidget(BuildContext? context,
         child: Text(
           title1!,
           style: isHome!
-              ? primaryTextStyle(color: appStore.appTextPrimaryColor, size: 28)
-              : boldTextStyle(color: appStore.appTextPrimaryColor, size: 28),
+              ? primaryTextStyle(color: appStore.appTextPrimaryColor, size: 22)
+              : boldTextStyle(color: appStore.appTextPrimaryColor, size: 22),
         ),
       ),
       4.width,
       Text(title2!,
           style: isHome
-              ? primaryTextStyle(color: appStore.appTextPrimaryColor, size: 28)
-              : boldTextStyle(size: 28)),
+              ? primaryTextStyle(color: appStore.appTextPrimaryColor, size: 22)
+              : boldTextStyle(size: 22)),
     ],
   ).paddingLeft(16);
 }
