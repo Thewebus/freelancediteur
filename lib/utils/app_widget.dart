@@ -376,7 +376,7 @@ BottomNavigationBarItem bottomNavigationBarItem(
         width: 25,
       ),
       activeIcon:
-          Image.asset(iconData, height: 26, width: 26, color: PRIMARY_COLOR),
+          Image.asset(iconData, height: 28, width: 28, color: PRIMARY_COLOR),
       label: tabName);
 }
 

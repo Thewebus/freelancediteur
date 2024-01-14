@@ -97,8 +97,34 @@ class _SignInScreenState extends State<SignInScreen> {
           await appStore.setLoggedIn(true);
           appStore.setLoading(false);
 
+          setState(() {
+            DashboardScreen();
+          });
+
+          Navigator.of(context).pop();
+          Navigator.of(context).pop();
+
+/* 
+          
           DashboardScreen().launch(context,
-              isNewTask: true, pageRouteAnimation: PageRouteAnimation.Slide);
+              isNewTask: false, pageRouteAnimation: PageRouteAnimation.Slide);
+          
+          
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DashboardScreen(),
+            ),
+          );
+          setState(() {});
+        
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => DashboardScreen()),
+          );
+  */
+
+          log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> RAFRAICHISSEMENT EFFECTUE !');
         }).catchError((onError) {
           appStore.setLoading(false);
 
