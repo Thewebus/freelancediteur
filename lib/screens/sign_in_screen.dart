@@ -250,6 +250,13 @@ class _SignInScreenState extends State<SignInScreen> {
                           width: 60, height: 60, fit: BoxFit.cover),
                     ),*/
                     8.height,
+                    IconButton(
+                        iconSize: 25,
+                        icon: Icon(Icons.arrow_back),
+                        color: Colors.white,
+                        onPressed: () async {
+                          Navigator.of(context).pop();
+                        }),
                     Text(keyString(context, 'lbl_sign_in')!,
                         style: boldTextStyle(size: 40, color: Colors.white)),
                     Text(keyString(context, 'lbl_welcome_back')!,
